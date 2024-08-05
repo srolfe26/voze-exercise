@@ -25,6 +25,7 @@ Your program should support the following features (time permitting):
 - You can use the `dictionary.txt` file included in this directory as your dictionary.
 - The input file (`file-to-check.txt` in the example above) is a plain text file that may contain full sentences and paragraphs.
 - You should come up with your own content to run through the spell checker.
-- Feel free to use any programming language, but extra credit for using Java or Kotlin.
+- Use any programming language, but extra credit for using Java or Kotlin.
+- Feel free to fork the repo and put your code in there or create a new blank repo and put your code in there instead.
 - Send us a link to your code and include instructions for how to build and run it.
 - Someone from Voze will review the code with you, so be prepared to discuss your code.
