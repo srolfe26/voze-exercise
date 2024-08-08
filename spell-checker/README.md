@@ -29,3 +29,16 @@ Your program should support the following features (time permitting):
 - Feel free to fork the repo and put your code in there or create a new blank repo and put your code in there instead.
 - Send us a link to your code and include instructions for how to build and run it.
 - Someone from Voze will review the code with you, so be prepared to discuss your code.
+
+# Stephen's Spell Checker
+
+Since I understand that there is some transition work required, I thought I would write the code in both Node and Kotlin. See instructions below:
+
+## Node.js
+1. In the terminal, go to the  `node-js-implementation` folder and run `npm install`.
+2. To run tests `npm run test`.
+3. To execute the program run `node spell-checker.js ../dictionary.txt ../file-to-check.txt`
+
+## Kotlin
+1. Install Gradle. On MacOS use homebrew `brew install gradle`.
+
