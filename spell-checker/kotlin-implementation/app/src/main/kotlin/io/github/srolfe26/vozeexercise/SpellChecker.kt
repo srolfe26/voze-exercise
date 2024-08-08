@@ -110,25 +110,48 @@ data class MisspelledWord(
     val suggestions: List<String>
 )
 
-fun main(args: Array<String>) {
-    if (args.size != 2) {
-        println("Usage: kotlin SpellChecker.kt <dictionary_file> <text_file>")
-        return
-    }
-
-    val (dictionaryPath, textPath) = args
-    val spellChecker = SpellChecker(dictionaryPath)
-
-    val misspelledWords = spellChecker.checkText(textPath)
-
-    if (misspelledWords.isNotEmpty()) {
-        println("Misspelled words:")
-        misspelledWords.forEach { (word, line, column, context, suggestions) ->
-            println("\n\"$word\" at line $line, column $column")
-            println("Context: ...${context}...")
-            println("Suggestions: ${suggestions.joinToString(", ")}")
+object SpellCheckerApp {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        if (args.size != 2) {
+            println("Usage: java -jar your-jar-file.jar <dictionary_file> <text_file>")
+            return
         }
-    } else {
-        println("No misspelled words found.")
+
+        val (dictionaryPath, textPath) = args
+
+        // Check if files exist
+        if (!File(dictionaryPath).exists()) {
+            println("Error: Dictionary file not found: $dictionaryPath")
+            println("Current working directory: ${System.getProperty("user.dir")}")
+            return
+        }
+
+        if (!File(textPath).exists()) {
+            println("Error: Text file not found: $textPath")
+            println("Current working directory: ${System.getProperty("user.dir")}")
+            return
+        }
+
+        try {
+            val spellChecker = SpellChecker(dictionaryPath)
+            val misspelledWords = spellChecker.checkText(textPath)
+
+            if (misspelledWords.isNotEmpty()) {
+                println("Misspelled words:")
+                misspelledWords.forEach { misspelledWord ->
+                    with(misspelledWord) {
+                        println("\n\"$word\" at line $line, column $column")
+                        println("Context: ...${context}...")
+                        println("Suggestions: ${suggestions.joinToString(", ")}")
+                    }
+                }
+            } else {
+                println("No misspelled words found.")
+            }
+        } catch (e: Exception) {
+            println("An error occurred: ${e.message}")
+            e.printStackTrace()
+        }
     }
 }

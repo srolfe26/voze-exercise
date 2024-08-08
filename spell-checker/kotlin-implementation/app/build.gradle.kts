@@ -6,15 +6,14 @@
  */
 
 plugins {
-    // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-    alias(libs.plugins.jvm)
-
-    // Apply the application plugin to add support for building a CLI application in Java.
+    kotlin("jvm") version "1.8.0"
     application
 }
 
+group = "io.github.srolfe26.vozeexercise"
+version = "1.0-SNAPSHOT"
+
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
@@ -33,11 +32,21 @@ java {
 }
 
 application {
-    // Define the main class for the application.
-    mainClass = "io.github.srolfe26.vozeexercise.SpellCheckerkt"
+    mainClass.set("io.github.srolfe26.vozeexercise.SpellCheckerApp")
 }
 
-tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "io.github.srolfe26.vozeexercise.SpellCheckerApp"
+    }
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.test {
     useJUnitPlatform()
+}
+
+kotlin {
+    jvmToolchain(11)
 }

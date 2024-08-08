@@ -1,4 +1,18 @@
-# Make a spell checker!
+# Stephen's Spell Checker
+
+Since I understand that there is some transition work required, I thought I would write the code in both Node and Kotlin. See instructions below:
+
+## Node.js
+1. In the terminal, go to the  `node-js-implementation` folder and run `npm install`.
+2. To run tests `npm run test`.
+3. To execute the program run `node spell-checker.js ../dictionary.txt ../file-to-check.txt`
+
+## Kotlin
+1. Install Gradle if not present on your system. On MacOS use homebrew `brew install gradle`.
+2. To test `./gradlew test --tests "io.github.srolfe26.vozeexercise.SpellCheckerTest"` then view the results file in the `app/build/reports/test-results/test/` folder.
+3. To execute the program run `java -jar app/build/libs/app-1.0-SNAPSHOT.jar ../dictionary.txt ../file-to-check.txt` from the `kotlin-implementation` folder.
+
+## Original Requirements
 
 Write a program that checks spelling. The input to the program is a dictionary file containing a list of valid words and a file containing the text to be checked.
 
@@ -18,7 +32,7 @@ Your program should support the following features (time permitting):
 - The program handles proper nouns (person or place names, for example) correctly.
 
 
-## Additional information
+### Additional information
 
 - The formatting of the output is up to you, but make it easy to understand.
 - The dictionary file (`dictionary.txt` in the example above) is always a plain text file with one word per line.
@@ -30,15 +44,5 @@ Your program should support the following features (time permitting):
 - Send us a link to your code and include instructions for how to build and run it.
 - Someone from Voze will review the code with you, so be prepared to discuss your code.
 
-# Stephen's Spell Checker
 
-Since I understand that there is some transition work required, I thought I would write the code in both Node and Kotlin. See instructions below:
-
-## Node.js
-1. In the terminal, go to the  `node-js-implementation` folder and run `npm install`.
-2. To run tests `npm run test`.
-3. To execute the program run `node spell-checker.js ../dictionary.txt ../file-to-check.txt`
-
-## Kotlin
-1. Install Gradle. On MacOS use homebrew `brew install gradle`.
 
