@@ -11,11 +11,11 @@ Since I understand that there is some transition work required, I thought I woul
 1. Install Gradle if not present on your system. On MacOS use homebrew `brew install gradle`.
 2. Go to the `kotlin-implementation` folder.
 3. To test:
-    a. Run `./gradlew test --tests "io.github.srolfe26.vozeexercise.SpellCheckerTest"`.
-    b. View the results file in the `app/build/reports/test-results/test/` folder.
+    1. Run `./gradlew test --tests "io.github.srolfe26.vozeexercise.SpellCheckerTest"`.
+    2. View the results file in the `app/build/reports/test-results/test/` folder.
 4. To execute the program:
-    a. First build the JAR file with `./gradlew jar`
-    b. Run `java -jar app/build/libs/app-1.0-SNAPSHOT.jar ../dictionary.txt ../file-to-check.txt`.
+    1. First build the JAR file with `./gradlew jar`
+    2. Run `java -jar app/build/libs/app-1.0-SNAPSHOT.jar ../dictionary.txt ../file-to-check.txt`.
 
 ## Original Requirements
 
