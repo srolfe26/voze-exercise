@@ -3,14 +3,19 @@
 Since I understand that there is some transition work required, I thought I would write the code in both Node and Kotlin. See instructions below:
 
 ## Node.js
-1. In the terminal, go to the  `node-js-implementation` folder and run `npm install`.
+1. In the terminal, go to the `node-js-implementation` folder and run `npm install`.
 2. To run tests `npm run test`.
 3. To execute the program run `node spell-checker.js ../dictionary.txt ../file-to-check.txt`
 
 ## Kotlin
 1. Install Gradle if not present on your system. On MacOS use homebrew `brew install gradle`.
-2. To test `./gradlew test --tests "io.github.srolfe26.vozeexercise.SpellCheckerTest"` then view the results file in the `app/build/reports/test-results/test/` folder.
-3. To execute the program run `java -jar app/build/libs/app-1.0-SNAPSHOT.jar ../dictionary.txt ../file-to-check.txt` from the `kotlin-implementation` folder.
+2. Go to the `kotlin-implementation` folder.
+3. To test:
+    a. Run `./gradlew test --tests "io.github.srolfe26.vozeexercise.SpellCheckerTest"`.
+    b. View the results file in the `app/build/reports/test-results/test/` folder.
+4. To execute the program:
+    a. First build the JAR file with `./gradlew jar`
+    b. Run `java -jar app/build/libs/app-1.0-SNAPSHOT.jar ../dictionary.txt ../file-to-check.txt`.
 
 ## Original Requirements
 
